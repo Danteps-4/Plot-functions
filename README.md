@@ -3,9 +3,9 @@
 Plot different functions in python using the library Matplotlib.
 
 You will be able to plot functions such as:
-- sen
-- cos
-- tan
+- sine
+- cosine
+- tangent
 - exponential
 - logaithmic
 - linear

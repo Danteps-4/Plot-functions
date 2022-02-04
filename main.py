@@ -6,7 +6,7 @@ b = 5
 c = 2
 
 def menu():
-    print("Menu de funciones posibles".center(40, "-"))
+    print("Functions menu".center(40, "-"))
     print("1- sin")
     print("2- cos")
     print("3- tan")
@@ -14,8 +14,8 @@ def menu():
     print("5- log")
     print("6- linear")
     print("7- quadratic")
-    funcion = int(input("Digite la función a visualizar:"))
-    return funcion
+    function = int(input("Enter the number of the function:"))
+    return function
 
 def sin(x):
     return np.sin(x)
@@ -41,25 +41,25 @@ def quadratic(x, a, b ,c):
 def plot_function(function):
     if function == 1:
         plt.plot(x, sin(x))
-        plt.title("Función seno")
+        plt.title("Sine function")
     elif function == 2:
         plt.plot(x, cos(x))
-        plt.title("Función coseno")
+        plt.title("Cosine function")
     elif function == 3:
         plt.plot(x, tan(x))
-        plt.title("Función tangente")
+        plt.title("Tangent function")
     elif function == 4:
         plt.plot(x, exp(x))
-        plt.title("Función exponencial")
+        plt.title("Exponential function")
     elif function == 5:
         plt.plot(x, log(x))
-        plt.title("Función logarítmica")
+        plt.title("Logarithmic function")
     elif function == 6:
         plt.plot(x, linear(a, b, x))
-        plt.title("Función lineal")
+        plt.title("Linear function")
     elif function == 7:
         plt.plot(x, quadratic(x, a, b, c))
-        plt.title("Función cuadrática")
+        plt.title("Quadratic function")
 
     plt.xlabel("x")
     plt.ylabel("y")
@@ -67,15 +67,15 @@ def plot_function(function):
     plt.show()
 
 try:
-    inicio = int(input("Ingrese primer valor de X: "))
-    fin = int(input("Ingrese ultimo valor de X: "))
-    while fin <= inicio:
-        print(f"Rango no valido, debe ingresar un numero mayor que {inicio}")
-        fin = int(input("Ingrese ultimo valor de X: "))
+    first = int(input("Enter the first value of x: "))
+    last = int(input("Enter the last value of x: "))
+    while last <= first:
+        print(f"Invalid value, must enter a value greater than {first}")
+        last = int(input("Enter the last value of x: "))
 except Exception as e:
     print(f"Error: {e}")
 
-x = np.linspace(inicio, fin, 1000)
+x = np.linspace(first, last, 1000)
 
 function = menu()
 plot_function(function)
